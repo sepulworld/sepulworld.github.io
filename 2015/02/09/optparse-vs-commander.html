@@ -33,7 +33,7 @@
     <meta property="og:description" content="Here is an optparse example, from which I will convert to commander. #!/usr/bin/ruby require &#x27;optparse&#x27; options = {} parser = OptionParser.new do |opts|   opts.banner = &quot;Usage: &amp;lt;script_name&amp;gt; [options]&quot;   options[:firstoption] = 20   opts.on(&quot;-t &amp;lt;integer&amp;gt;..." />
     <meta property="og:url" content="http://sepulworld.github.io/2015/02/09/optparse-vs-commander.html" />
     <meta property="article:published_time" content="2015-02-09T08:00:00.000Z" />
-    <meta property="article:modified_time" content="2015-02-10T01:18:42.747Z" />
+    <meta property="article:modified_time" content="2015-02-10T05:30:47.880Z" />
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="optparse vs commander" />
@@ -55,7 +55,7 @@
     "headline": "optparse vs commander",
     "url": "http://sepulworld.github.io/2015/02/09/optparse-vs-commander.html",
     "datePublished": "2015-02-09T08:00:00.000Z",
-    "dateModified": "2015-02-10T01:18:42.747Z",
+    "dateModified": "2015-02-10T05:30:47.880Z",
     "description": "Here is an optparse example, from which I will convert to commander. #!/usr/bin/ruby require &#x27;optparse&#x27; options = {} parser = OptionParser.new do |opts|   opts.banner = &quot;Usage: &amp;lt;script_name&amp;gt; [options]&quot;   options[:firstoption] = 20   opts.on(&quot;-t &amp;lt;integer&amp;gt;..."
 }
     </script>
@@ -145,48 +145,53 @@
                 <div class="paragraph">
 <p>Here is an optparse example, from which I will convert to commander.</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>#!/usr/bin/ruby</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>require 'optparse'
+<pre class="highlight"><code>#!/usr/bin/ruby
+
+require 'optparse'
+
 options = {}
 parser = OptionParser.new do |opts|
   opts.banner = "Usage: &lt;script_name&gt; [options]"
+
   options[:firstoption] = 20
+
   opts.on("-t &lt;integer&gt;", "--secondoption", "Number of HTTP request threads to generate") do |t|
     options[:secondoption] = t
   end
+
   opts.on("-p &lt;string&gt;", "--thirdoption", "Description of third option") do |p|
     options[:thirdoption] = p
   end
+
   opts.on("-d &lt;directory value&gt;", "--product_dir", "Description of product_dir option") do |d|
     options[:product_dir] = d
   end
+
   opts.on("-c &lt;remote url&gt;", "--remote_url", "Put nice little description here") do |c|
     options[:remote_url] = c
   end
+
   opts.on("-v", "--verbose", "Output is verbose") do |v|
     options[:verbose] = v
   end
+
   opts.on('-h', '--help', 'Displays Help') do
     puts opts
     exit
   end
 end
-parser.parse!</pre>
+parser.parse!</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>Now for the commander version&#8230;&#8203;</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>#!/usr/bin/ruby
-require 'commander'</pre>
+<pre class="highlight"><code>#!/usr/bin/ruby
+require 'commander'</code></pre>
 </div>
 </div>
                         <aside class="tags fi-pricetag-multiple">No tag</aside>
