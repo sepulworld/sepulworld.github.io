@@ -1,2 +1,41 @@
-= My First Post
+= optparse vs commander
+
+Here is an optparse example, from which I will convert to commander.
+
+    #!/usr/bin/ruby
+ 
+    require 'optparse'
+    options = {}
+    parser = OptionParser.new do |opts|
+      opts.banner = "Usage: <script_name> [options]"
+      options[:firstoption] = 20
+      opts.on("-t <integer>", "--secondoption", "Number of HTTP request threads to generate") do |t|
+        options[:secondoption] = t
+      end
+      opts.on("-p <string>", "--thirdoption", "Description of third option") do |p|
+        options[:thirdoption] = p
+      end
+      opts.on("-d <directory value>", "--product_dir", "Description of product_dir option") do |d|
+        options[:product_dir] = d
+      end
+      opts.on("-c <remote url>", "--remote_url", "Put nice little description here") do |c|
+        options[:remote_url] = c
+      end
+      opts.on("-v", "--verbose", "Output is verbose") do |v|
+        options[:verbose] = v
+      end
+      opts.on('-h', '--help', 'Displays Help') do
+        puts opts
+        exit
+      end
+    end
+    parser.parse!
+
+Now for the commander version...
+
+    #!/usr/bin/ruby
+    require 'commander'
+    
+    
+
 
